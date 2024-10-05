@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cg26p4baofm07" path="res://snail_player.png" id="2_pjho5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryixc"]
-size = Vector2(26, 25)
+size = Vector2(11, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhd2v"]
 atlas = ExtResource("2_pjho5")
@@ -46,12 +46,13 @@ animations = [{
 }]
 
 [node name="player" type="Area2D"]
+process_mode = 1
 collision_layer = 2
 script = ExtResource("1_caaxk")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -0.5)
+position = Vector2(-1.5, -1.5)
 shape = SubResource("RectangleShape2D_ryixc")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]

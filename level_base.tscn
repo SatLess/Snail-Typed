@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://cdxsd1dj1t4ts"]
+[gd_scene load_steps=10 format=4 uid="uid://ql61flbdidij"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_ma27g"]
-[ext_resource type="Texture2D" uid="uid://cauje132ddol5" path="res://tileset.png" id="1_qm21c"]
-[ext_resource type="PackedScene" uid="uid://d23otk3rpyqox" path="res://TypeManager.tscn" id="2_fpxku"]
-[ext_resource type="PackedScene" uid="uid://t1duqesc3ajv" path="res://player.tscn" id="3_q6nhg"]
-[ext_resource type="Script" path="res://finish_line.gd" id="5_fi20k"]
-[ext_resource type="PackedScene" uid="uid://c548i0e4ftakl" path="res://enemy.tscn" id="6_i7ie0"]
+[ext_resource type="Texture2D" uid="uid://cauje132ddol5" path="res://tileset.png" id="1_hgrcl"]
+[ext_resource type="Script" path="res://level.gd" id="1_xntij"]
+[ext_resource type="PackedScene" uid="uid://d23otk3rpyqox" path="res://TypeManager.tscn" id="2_nsifp"]
+[ext_resource type="PackedScene" uid="uid://t1duqesc3ajv" path="res://player.tscn" id="3_ny42f"]
+[ext_resource type="Script" path="res://finish_line.gd" id="4_s2pi7"]
+[ext_resource type="PackedScene" uid="uid://c548i0e4ftakl" path="res://enemy.tscn" id="6_h1n5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7uga"]
-texture = ExtResource("1_qm21c")
+texture = ExtResource("1_hgrcl")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -39,9 +39,9 @@ sources/0 = SubResource("TileSetAtlasSource_s7uga")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3se"]
 size = Vector2(38, 349)
 
-[node name="Level1" type="Node2D"]
+[node name="level_base" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_ma27g")
+script = ExtResource("1_xntij")
 enemy_timer = 0.7
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -50,7 +50,7 @@ tile_set = SubResource("TileSet_c81ks")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TypeManager" parent="CanvasLayer" instance=ExtResource("2_fpxku")]
+[node name="TypeManager" parent="CanvasLayer" instance=ExtResource("2_nsifp")]
 process_mode = 1
 max_keys = 20
 metadata/_edit_use_anchors_ = true
@@ -73,7 +73,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="countdownTimer" type="Timer" parent="CanvasLayer"]
 
-[node name="player" parent="." instance=ExtResource("3_q6nhg")]
+[node name="player" parent="." instance=ExtResource("3_ny42f")]
 position = Vector2(48, 206)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -82,17 +82,17 @@ anchor_mode = 0
 [node name="FinishLine" type="Area2D" parent="."]
 position = Vector2(594, 44)
 collision_mask = 2
-script = ExtResource("5_fi20k")
+script = ExtResource("4_s2pi7")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine"]
 position = Vector2(0, 164.5)
 shape = SubResource("RectangleShape2D_uq3se")
 
-[node name="enemy" parent="." instance=ExtResource("6_i7ie0")]
+[node name="enemy" parent="." instance=ExtResource("6_h1n5p")]
 position = Vector2(46, 146)
 
-[node name="enemy2" parent="." instance=ExtResource("6_i7ie0")]
+[node name="enemy2" parent="." instance=ExtResource("6_h1n5p")]
 position = Vector2(48, 261)
 
 [connection signal="timeout" from="CanvasLayer/countdownTimer" to="." method="_on_countdown_timer_timeout"]
