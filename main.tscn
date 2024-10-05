@@ -1,18 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8lkplg47o6u3"]
+[gd_scene load_steps=2 format=3 uid="uid://c8lkplg47o6u3"]
 
-[ext_resource type="PackedScene" uid="uid://d23otk3rpyqox" path="res://TypeManager.tscn" id="1_63afr"]
-[ext_resource type="PackedScene" uid="uid://t1duqesc3ajv" path="res://player.tscn" id="2_e7rhr"]
-[ext_resource type="PackedScene" uid="uid://bdcjbvexkcjvi" path="res://finish_line.tscn" id="3_rq13o"]
+[ext_resource type="PackedScene" uid="uid://cdxsd1dj1t4ts" path="res://level_1.tscn" id="1_r5xhg"]
 
 [node name="Main" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TypeManager" parent="CanvasLayer" instance=ExtResource("1_63afr")]
-max_keys = 10
-
-[node name="player" parent="." instance=ExtResource("2_e7rhr")]
-position = Vector2(32, 338)
-
-[node name="FinishLine" parent="." instance=ExtResource("3_rq13o")]
-position = Vector2(320, 128)
+[node name="Level1" parent="." instance=ExtResource("1_r5xhg")]

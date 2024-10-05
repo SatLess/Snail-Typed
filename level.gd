@@ -6,5 +6,6 @@ class_name Level
 @export var finish_line: float = 592
 
 func _ready() -> void:
+	SignalBus.playerWon.connect(func(): print("ele e bao dms"))
 	player.speed *= (finish_line-player.offset)/type_manager.max_keys
 	

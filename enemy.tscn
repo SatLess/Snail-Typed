@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c548i0e4ftakl"]
+
+[ext_resource type="Texture2D" uid="uid://c0jrp055lutav" path="res://enemy.png" id="1_mwmx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinjv"]
+size = Vector2(14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62vt1"]
+atlas = ExtResource("1_mwmx3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x3hv"]
+atlas = ExtResource("1_mwmx3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvtjy"]
+atlas = ExtResource("1_mwmx3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcx28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62vt1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x3hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvtjy")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="enemy" type="Area2D"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_dinjv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hcx28")
+animation = &"move"
+frame = 1
+frame_progress = 0.226916

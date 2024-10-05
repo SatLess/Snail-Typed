@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cdxsd1dj1t4ts"]
+[gd_scene load_steps=9 format=4 uid="uid://cdxsd1dj1t4ts"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ma27g"]
 [ext_resource type="Texture2D" uid="uid://cauje132ddol5" path="res://tileset.png" id="1_qm21c"]
 [ext_resource type="PackedScene" uid="uid://d23otk3rpyqox" path="res://TypeManager.tscn" id="2_fpxku"]
 [ext_resource type="PackedScene" uid="uid://t1duqesc3ajv" path="res://player.tscn" id="3_q6nhg"]
+[ext_resource type="Script" path="res://finish_line.gd" id="5_fi20k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wwer"]
 texture = ExtResource("1_qm21c")
@@ -34,6 +35,9 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_5wwer")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3se"]
+size = Vector2(38, 349)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma27g")
 
@@ -48,3 +52,18 @@ max_keys = 20
 
 [node name="player" parent="." instance=ExtResource("3_q6nhg")]
 position = Vector2(48, 206)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="FinishLine" type="Area2D" parent="."]
+position = Vector2(594, 44)
+collision_mask = 2
+script = ExtResource("5_fi20k")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine"]
+position = Vector2(0, 164.5)
+shape = SubResource("RectangleShape2D_uq3se")
+
+[connection signal="area_entered" from="FinishLine" to="FinishLine" method="_on_area_entered"]
