@@ -54,7 +54,6 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_ryixc")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_axs0s")
 animation = &"schmoving"
-frame = 1
-frame_progress = 0.579233

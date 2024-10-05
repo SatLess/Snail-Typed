@@ -12,7 +12,7 @@
 max_keys = 10
 
 [node name="player" parent="." instance=ExtResource("2_e7rhr")]
-position = Vector2(0, 128)
+position = Vector2(32, 338)
 
 [node name="FinishLine" parent="." instance=ExtResource("3_rq13o")]
 position = Vector2(320, 128)
