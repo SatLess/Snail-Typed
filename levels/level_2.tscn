@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dykqcuoi34onn" path="res://components/finish_text.tscn" id="4_g2mo6"]
 [ext_resource type="AudioStream" uid="uid://ddvobfnymaek4" path="res://Blip_Select.wav" id="5_mv61s"]
 [ext_resource type="PackedScene" uid="uid://t1duqesc3ajv" path="res://components/player.tscn" id="6_rxycy"]
-[ext_resource type="Script" path="res://scripts/finish_line.gd" id="7_1xpem"]
+[ext_resource type="Script" path="res://levels/scripts/finish_line.gd" id="7_1xpem"]
 [ext_resource type="PackedScene" uid="uid://c548i0e4ftakl" path="res://components/enemy.tscn" id="8_754p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehbvm"]
@@ -28,14 +28,14 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ehbvm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3se"]
-size = Vector2(14.5, 349)
+size = Vector2(47, 349)
 
 [node name="level_2" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_4gauo")
-finish_line = 594.0
-enemy_timer = 0.7
-range_enemy = 0.2
+finish_line = 596.0
+enemy_timer = 0.93
+enemy_speed = 42
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -50,7 +50,7 @@ color = Color(0.97, 0.5238, 0.732027, 0.196078)
 
 [node name="TypeManager" parent="CanvasLayer" instance=ExtResource("3_ny54s")]
 process_mode = 1
-max_keys = 14
+max_keys = 23
 metadata/_edit_use_anchors_ = true
 
 [node name="Countdown" type="Label" parent="CanvasLayer"]
@@ -72,6 +72,7 @@ metadata/_edit_use_anchors_ = true
 [node name="countdownTimer" type="Timer" parent="CanvasLayer"]
 
 [node name="FinishText" parent="CanvasLayer" instance=ExtResource("4_g2mo6")]
+process_mode = 3
 visible = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
@@ -98,7 +99,7 @@ script = ExtResource("7_1xpem")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine"]
-position = Vector2(3.25, 164.5)
+position = Vector2(38.5, 164.5)
 shape = SubResource("RectangleShape2D_uq3se")
 
 [node name="enemy" parent="." instance=ExtResource("8_754p5")]

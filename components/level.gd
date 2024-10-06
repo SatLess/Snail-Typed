@@ -4,12 +4,16 @@ class_name Level
 @onready var player: Area2D = $player
 @onready var type_manager: Control = $CanvasLayer/TypeManager
 @export var finish_line: float = 592
+
 @export var enemy_timer: float = .5
-@export var range_enemy = .15
+@export var range_enemy = .05
+@export var enemy_speed: = 16
+
 @onready var countdown: Label = $CanvasLayer/Countdown
 @onready var countdown_timer: Timer = $CanvasLayer/countdownTimer
 @onready var audio: AudioStreamPlayer2D = $CanvasLayer/AudioStreamPlayer2D
 @onready var camera: Camera2D = $Camera2D
+@onready var finish_node: FinishLine = $FinishLine
 
 var timer = 3
 
@@ -44,6 +48,7 @@ func _ready() -> void:
 	for i in get_children():
 		if i is Enemy: 
 			i.timer_start(randf_range(enemy_timer - range_enemy,enemy_timer))
+			i.speed *= enemy_speed
 
 
 func _on_countdown_timer_timeout() -> void:

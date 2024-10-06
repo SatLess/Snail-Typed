@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dykqcuoi34onn"]
 
-[ext_resource type="Script" path="res://scripts/finish_text.gd" id="1_qd24d"]
+[ext_resource type="Script" path="res://levels/scripts/finish_text.gd" id="1_qd24d"]
 
 [node name="FinishText" type="Control"]
 visible = false

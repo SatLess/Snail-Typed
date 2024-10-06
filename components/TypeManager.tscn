@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d23otk3rpyqox"]
 
 [ext_resource type="Script" path="res://components/type_manager.gd" id="1_mc4nb"]
-[ext_resource type="Texture2D" uid="uid://c55fl6fv20mgg" path="res://sprites/type_artwork.png" id="2_2fb27"]
+[ext_resource type="Texture2D" uid="uid://5gasw0jyt87r" path="res://sprites/type_artwork1.png" id="2_glr2x"]
 
 [node name="TypeManager" type="Control"]
 layout_mode = 3
@@ -11,6 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mc4nb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_glr2x")
+stretch_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 clip_contents = true
@@ -23,14 +34,3 @@ anchor_bottom = 1.0
 grow_vertical = 2
 theme_override_constants/separation = 20
 metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 395.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_2fb27")
-stretch_mode = 2
