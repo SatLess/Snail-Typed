@@ -5,3 +5,5 @@ signal WrongLetter
 
 signal playerLost
 signal playerWon
+
+signal nextLevel()

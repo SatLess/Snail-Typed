@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://t1duqesc3ajv"]
+
+[ext_resource type="Script" path="res://components/player.gd" id="1_caaxk"]
+[ext_resource type="AudioStream" uid="uid://cfoy8j1ukfpq1" path="res://Paste.wav" id="3_1rsng"]
+[ext_resource type="Texture2D" uid="uid://cedkg0fblconl" path="res://sprites/snail_p.png" id="3_lhlpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryixc"]
+size = Vector2(16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaooq"]
+atlas = ExtResource("3_lhlpl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ja1r"]
+atlas = ExtResource("3_lhlpl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw1fk"]
+atlas = ExtResource("3_lhlpl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdaow"]
+atlas = ExtResource("3_lhlpl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axs0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaooq")
+}],
+"loop": false,
+"name": &"alert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ja1r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw1fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdaow")
+}],
+"loop": true,
+"name": &"schmoving",
+"speed": 4.0
+}]
+
+[node name="player" type="Area2D"]
+process_mode = 1
+collision_layer = 2
+script = ExtResource("1_caaxk")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0.5)
+shape = SubResource("RectangleShape2D_ryixc")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_axs0s")
+animation = &"idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1rsng")
+volume_db = 1.981
+pitch_scale = 1.24

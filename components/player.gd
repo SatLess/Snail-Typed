@@ -2,17 +2,28 @@ extends Area2D
 class_name Player
 
 @export var speed: float = 16
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sprite: AnimatedSprite2D = $sprite
 var is_tweening: bool = false
 var move_num: int = 0
 var offset
+var is_alerted: bool = false
 
 func _ready():
+	
+	SignalBus.WrongLetter.connect(func(): 
+		sprite.play("alert")
+		is_alerted = true
+		audio.play()
+		await sprite.animation_finished
+		is_alerted = false
+		)
+	
 	if global_position.x > 320:
 		offset = 640 - global_position.x
 	else: offset = global_position.x
 	speed = -1 if global_position.x > 320 else 1
-	sprite.flip_h = true if global_position.x < 320 else false
+	sprite.flip_h = true if global_position.x > 320 else false
 	SignalBus.RightLetter.connect(func(): move_num += 1)
 
 func _physics_process(delta):
@@ -25,7 +36,7 @@ func _physics_process(delta):
 			await tween.finished
 			move_num -= 1
 		is_tweening = false
-	if move_num == 0:
+	if move_num == 0 and is_alerted == false:
 		sprite.play("idle")
 
 #func _input(event):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d23otk3rpyqox"]
 
-[ext_resource type="Script" path="res://type_manager.gd" id="1_mc4nb"]
-[ext_resource type="Texture2D" uid="uid://c55fl6fv20mgg" path="res://type_artwork.png" id="2_2fb27"]
+[ext_resource type="Script" path="res://components/type_manager.gd" id="1_mc4nb"]
+[ext_resource type="Texture2D" uid="uid://c55fl6fv20mgg" path="res://sprites/type_artwork.png" id="2_2fb27"]
 
 [node name="TypeManager" type="Control"]
 layout_mode = 3

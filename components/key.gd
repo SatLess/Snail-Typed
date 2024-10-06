@@ -19,4 +19,4 @@ func _unhandled_input(event):
 	if Input.is_key_pressed(letter) and just_pressed: 
 		SignalBus.RightLetter.emit()
 		queue_free()
-	elif not Input.is_key_pressed(letter) and just_pressed: print("duck/snail killer") 
+	elif not Input.is_key_pressed(letter) and just_pressed: SignalBus.WrongLetter.emit()

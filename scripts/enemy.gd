@@ -20,3 +20,9 @@ func _on_timer_timeout() -> void:
 func timer_start(timer_wait: float):
 	timer.wait_time = timer_wait
 	timer.start()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is FinishLine:
+		timer.stop()
+		sprite.play("move")

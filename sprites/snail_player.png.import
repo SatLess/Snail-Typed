@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cauje132ddol5"
-path="res://.godot/imported/tileset.png-a39e944f25b35d62f55d4f98a36e2b5e.ctex"
+uid="uid://cg26p4baofm07"
+path="res://.godot/imported/snail_player.png-5f2da4e5442aba1063c7ebdbbefe61e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileset.png"
-dest_files=["res://.godot/imported/tileset.png-a39e944f25b35d62f55d4f98a36e2b5e.ctex"]
+source_file="res://sprites/snail_player.png"
+dest_files=["res://.godot/imported/snail_player.png-5f2da4e5442aba1063c7ebdbbefe61e8.ctex"]
 
 [params]
 
