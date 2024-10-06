@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8lkplg47o6u3"]
+[gd_scene load_steps=6 format=3 uid="uid://c8lkplg47o6u3"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7wrsw"]
-[ext_resource type="PackedScene" uid="uid://cdxsd1dj1t4ts" path="res://components/level_1.tscn" id="2_my6rt"]
+[ext_resource type="PackedScene" uid="uid://cdxsd1dj1t4ts" path="res://levels/level_1.tscn" id="2_my6rt"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="2_sepmr"]
+[ext_resource type="PackedScene" uid="uid://kcpuoty2w2rq" path="res://levels/level_2.tscn" id="3_3yrv5"]
+[ext_resource type="PackedScene" uid="uid://dwnrc0xhb37fd" path="res://levels/level_3.tscn" id="4_wo0rr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7wrsw")
-levels = Array[PackedScene]([ExtResource("2_my6rt")])
+levels = Array[PackedScene]([ExtResource("2_my6rt"), ExtResource("3_3yrv5"), ExtResource("4_wo0rr")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -35,6 +35,7 @@ func _ready() -> void:
 		get_tree().paused = true)
 	
 	SignalBus.playerLost.connect(func():
+		get_tree().paused = true
 		type_manager.hide()
 		type_manager.process_mode = Node.PROCESS_MODE_DISABLED)
 	
@@ -42,7 +43,7 @@ func _ready() -> void:
 	player.speed *= (finish_line-player.offset)/type_manager.max_keys
 	for i in get_children():
 		if i is Enemy: 
-			i.timer_start(randf_range(enemy_timer - range_enemy,enemy_timer+range_enemy))
+			i.timer_start(randf_range(enemy_timer - range_enemy,enemy_timer))
 
 
 func _on_countdown_timer_timeout() -> void:

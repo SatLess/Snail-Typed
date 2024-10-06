@@ -9,7 +9,7 @@ var speed := 0
 
 func _ready():
 	speed = -1 if global_position.x > 320 else 1
-	sprite.flip_h = true if global_position.x < 320 else false
+	sprite.flip_h = true if global_position.x > 320 else false
 
 func _on_timer_timeout() -> void:
 	var tween = create_tween()
