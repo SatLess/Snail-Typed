@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://dykqcuoi34onn"]
+
+[ext_resource type="Script" path="res://scripts/finish_text.gd" id="1_qd24d"]
+
+[node name="FinishText" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qd24d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.0
+grow_horizontal = 2
+color = Color(0.172549, 0.172549, 0.588235, 0.835294)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.172549, 0.172549, 0.588235, 0.835294)
+
+[node name="The winner is" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0671875
+anchor_right = 1.0
+anchor_bottom = 0.191667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "The winner is... "
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Proceed" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.991667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Press key to proceed
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="winnerName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485938
+anchor_right = 0.617188
+anchor_bottom = 0.191667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Snail!"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="playerwon" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.635938
+anchor_top = 0.025
+anchor_right = 0.845312
+anchor_bottom = 0.216667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "(yours, obviously)"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

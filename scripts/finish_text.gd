@@ -31,5 +31,5 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_R) and enable_input == true:
 		if has_won: SignalBus.nextLevel.emit()
-		elif has_won == false: get_tree().reload_current_scene()
+		elif has_won == false: SignalBus.reset_level.emit()
 		

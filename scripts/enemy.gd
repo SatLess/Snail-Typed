@@ -3,6 +3,7 @@ class_name Enemy
 
 @onready var timer: Timer = $Timer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var walkaudio: AudioStreamPlayer2D = $walkaudio
 var speed := 0
 
 
@@ -14,6 +15,7 @@ func _on_timer_timeout() -> void:
 	var tween = create_tween()
 	tween.tween_property(self,"global_position",global_position+ Vector2(speed*24,0),.3)
 	sprite.play("move")
+	walkaudio.play()
 	await  tween.finished
 	sprite.play("default")
 

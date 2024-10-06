@@ -4,6 +4,7 @@ class_name Player
 @export var speed: float = 16
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sprite: AnimatedSprite2D = $sprite
+@onready var walkaudio: AudioStreamPlayer2D = $walkaudio
 var is_tweening: bool = false
 var move_num: int = 0
 var offset
@@ -32,6 +33,7 @@ func _physics_process(delta):
 			var tween = create_tween()
 			tween.tween_property(self,"global_position",global_position+ Vector2(speed,0),.3)
 			sprite.play("schmoving")
+			walkaudio.play()
 			is_tweening = true
 			await tween.finished
 			move_num -= 1

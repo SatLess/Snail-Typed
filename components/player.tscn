@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://t1duqesc3ajv"]
+[gd_scene load_steps=11 format=3 uid="uid://t1duqesc3ajv"]
 
 [ext_resource type="Script" path="res://components/player.gd" id="1_caaxk"]
 [ext_resource type="AudioStream" uid="uid://cfoy8j1ukfpq1" path="res://Paste.wav" id="3_1rsng"]
 [ext_resource type="Texture2D" uid="uid://cedkg0fblconl" path="res://sprites/snail_p.png" id="3_lhlpl"]
+[ext_resource type="AudioStream" uid="uid://po74sl3i4s38" path="res://walk.wav" id="4_lhmv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryixc"]
 size = Vector2(16, 19)
@@ -72,3 +73,8 @@ animation = &"idle"
 stream = ExtResource("3_1rsng")
 volume_db = 1.981
 pitch_scale = 1.24
+
+[node name="walkaudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lhmv1")
+volume_db = -10.0
+pitch_scale = 0.75
